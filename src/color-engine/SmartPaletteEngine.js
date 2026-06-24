@@ -99,8 +99,11 @@ export class SmartPaletteEngine {
       secondary: false,
       accent: false,
     };
+
     this.scheme = "analogous";
     this.history = new HistoryManager();
+
+    this.shuffle(); // IMPORTANT
   }
 
   /**

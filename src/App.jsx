@@ -38,6 +38,7 @@ export default function App() {
   const [showPresets, setShowPresets] = useState(false);
   const [showContrast, setShowContrast] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pickerRef = useRef(null);
 
   const schemes = [
     "all",
@@ -237,7 +238,7 @@ export default function App() {
               ([key, value]) => {
                 const textColor = engine.bestTextOn(value);
                 const locked = generatedTheme.meta?.locks?.[key];
-                const pickerRef = useRef(null);
+                
                 const contrastMeta = getContrastMeta(key, value);
                 const ContrastIcon = contrastMeta.icon;
 

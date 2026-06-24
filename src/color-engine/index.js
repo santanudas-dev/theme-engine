@@ -37,9 +37,18 @@ const palette = {
   bestTextOn: (hex) => ContrastEngine.bestText(hex),
 
   // export — operates on the current light/dark pair
-  exportCSS: () => ExportEngine.toCSSVariables(engine.history.current),
-  exportTailwind: () => ExportEngine.toTailwindV4(engine.history.current),
-  exportJSON: () => ExportEngine.toJSON(engine.history.current),
+  exportCSS: () =>
+    engine.history.current
+      ? ExportEngine.toCSSVariables(engine.history.current)
+      : "",
+
+  exportTailwind: () =>
+    engine.history.current
+      ? ExportEngine.toTailwindV4(engine.history.current)
+      : "",
+
+  exportJSON: () =>
+    engine.history.current ? ExportEngine.toJSON(engine.history.current) : "{}",
 };
 
 export default palette;
