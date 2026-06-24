@@ -28,7 +28,9 @@ import PresetsModal from "./components/PresetsModal";
 import LandingPage from "./LandingPage";
 
 export default function App() {
-  const { theme, setTheme } = useTheme();
+  const { theme: rawTheme, setTheme } = useTheme();
+  // Guard: rawTheme could be "system" on first Vercel load before localStorage is set
+  const theme = rawTheme === "dark" ? "dark" : "light";
   const [generatedTheme, setGeneratedTheme] = useState(() => engine.shuffle());
   const [scheme, setScheme] = useState("all");
   const [showSchemeModal, setShowSchemeModal] = useState(false);

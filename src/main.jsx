@@ -6,7 +6,7 @@ import { ThemeProvider } from "tailwind-theme-provider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider themes={["light", "dark"]}>
+    <ThemeProvider themes={["light", "dark"]} defaultTheme="light">
       <App />
     </ThemeProvider>
   </StrictMode>,

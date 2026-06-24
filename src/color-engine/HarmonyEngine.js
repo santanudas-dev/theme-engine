@@ -4,16 +4,18 @@
  * or theme — that's SmartPaletteEngine's job.
  */
 export class HarmonyEngine {
-  static schemes = {
-    monochromatic: [0, 0, 0],
-    analogous: [0, 30, -30],
-    // Accent sits 30° off the true complement so it reads as a distinct
-    // color rather than a tinted twin of primary.
-    complementary: [0, 180, 150],
-    splitComplementary: [0, 150, 210],
-    triadic: [0, 120, 240],
-    tetradic: [0, 90, 180],
-  };
+  static get schemes() {
+    return {
+      monochromatic: [0, 0, 0],
+      analogous: [0, 30, -30],
+      // Accent sits 30° off the true complement so it reads as a distinct
+      // color rather than a tinted twin of primary.
+      complementary: [0, 180, 150],
+      splitComplementary: [0, 150, 210],
+      triadic: [0, 120, 240],
+      tetradic: [0, 90, 180],
+    };
+  }
 
   static getRandomScheme() {
     const keys = Object.keys(this.schemes);
