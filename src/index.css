@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --background: #e8e7ee;
+    --primary: #2336c7;
+    --secondary: #4958ca;
+    --accent: #1c33e3;
+    --text: #000000;
+
+    --linearPrimarySecondary: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    --radialPrimarySecondary: radial-gradient(
+        circle,
+        var(--primary),
+        var(--secondary)
+    );
+
+    --linearPrimaryAccent: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    --radialPrimaryAccent: radial-gradient(
+        circle,
+        var(--primary),
+        var(--accent)
+    );
+
+    --linearSecondaryAccent: linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+
+    --radialSecondaryAccent: radial-gradient(
+        circle,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+:root.dark {
+    --background: #16141f;
+    --primary: #6e7ad8;
+    --secondary: #7f88d2;
+    --accent: #5262e0;
+    --text: #ffffff;
+}
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+
+    --color-background: var(--background);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
+    --color-text: var(--text);
+}
+
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
